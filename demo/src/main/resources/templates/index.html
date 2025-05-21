@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function submitForm(path) {
+            document.querySelector('#form').action = path;
+        }
+    </script>
 </head>
 <body>
+    <table>
+        <tr th:if="${validationError}" th:each="error : ${validationError}">
+            <td style="color:blue" th:text="${error}"></td>
+        </tr>
+    </table>
+    <br>
+    <form id="form" action="" method="get">
+        
+            <label for="userid">ユーザID</label>
+            <input type="text" id="id" name="id"  th:value="${backValue != null ? backValue.id: ''}"><br>
+
+            <label for="mail">メール</label>
+            <input type="text" id="mail" name="mail"  th:value="${backValue != null ? backValue.mail: ''}"><br>
+
+            <label for="nickname">ニックネーム</label>
+            <input type="text" id="nickName" name="nickName"  th:value="${backValue != null ? backValue.nickName: ''}"><br>
+
+            <label for="password">パスワード</label>
+            <input type="text" id="password" name="password"  th:value="${backValue != null ? backValue.password: ''}"><br>
+
+            <label for="prefecture">県名</label>
+            <input type="text" id="prefecture" name="prefecture"  th:value="${backValue != null ? backValue.prefecture: ''}"><br>
+
+            <label for="tel">電話番号</label>
+            <input type="text" id="tel" name="tel"  th:value="${backValue != null ? backValue.tel: ''}"><br>
+
+            <label for="remarks">備考</label>
+            <input type="text" id="remarks" name="remarks"  th:value="${backValue != null ? backValue.remarks: ''}"><br>
+
+            <label for="deleteFrag">削除フラグ</label>
+            <input type="text" id="deleteFrag" name="deleteFrag"  th:value="${backValue != null ? backValue.deleteFrag: ''} "><br><br> 
+        
+
+        <input type="submit" onclick="submitForm('/regist')" value="登録">
+        <input type="submit" onclick="submitForm('/search')" value="検索">
+    </form>
+    <br>
     <table border="1">
         <thead>
             <tr>
