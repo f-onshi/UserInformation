@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>ログインページ</h1>
+    <!-- 入力エラーの場合 -->
+    <div th:if="${validationError}">
+        <ul>
+            <li th:each="error : ${validationError}" th:text="${error}" class="text-danger"></li>
+        </ul>
+    </div>
+    <!-- ログインエラーの場合 -->
+    <div th:if="${loginError}" >
+        <p th:text="${loginError}" class="text-danger"></p>
+    </div>
+
+    <form th:action="@{/controller/login}" th:object="${loginRequest}" th:method="post">
+        <div>
+            <label>ID : </label>
+            <input type="text" th:field="*{id}">
+        </div>
+        <div>
+            <label>パスワード : </label>
+            <input type="text" th:field="*{password}">
+        </div>
+        <div>
+            <input type="submit" value="ログイン">
+        </div>
+    </form>
+</body>
+</html>
