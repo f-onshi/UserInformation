@@ -1,8 +1,10 @@
-package com.example.demo.service;
+package com.example.securingweb.demo.service;
 
 import org.springframework.stereotype.Service;
-import com.example.demo.repository.SearchRepository;
-import com.example.demo.model.*;
+
+import com.example.securingweb.demo.model.*;
+import com.example.securingweb.demo.repository.SearchRepository;
+
 import java.util.List;
 
 @Service

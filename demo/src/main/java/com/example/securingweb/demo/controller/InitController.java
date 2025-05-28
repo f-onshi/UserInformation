@@ -1,6 +1,5 @@
-package com.example.demo.controller;
-
-import org.springframework.stereotype.Controller;
+package com.example.securingweb.demo.controller;
+/*import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -25,5 +24,6 @@ public class InitController {
         model.addAttribute("userList", list);
         return "index";
 */    
-    
+
+  
 

@@ -1,9 +1,10 @@
-package com.example.demo.service;
+package com.example.securingweb.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.demo.model.UserDto;
-import com.example.demo.repository.*;
+
+import com.example.securingweb.demo.model.UserDto;
+import com.example.securingweb.demo.repository.*;
 
 
 @Service

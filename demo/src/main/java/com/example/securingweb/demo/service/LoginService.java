@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.securingweb.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

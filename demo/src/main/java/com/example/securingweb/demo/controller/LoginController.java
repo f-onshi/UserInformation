@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.securingweb.demo.controller;
 
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
@@ -8,11 +8,12 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.demo.dto.LoginRequest;
-import com.example.demo.service.LoginService;
-import com.example.demo.service.PasswordService;
+import com.example.securingweb.demo.model.LoginRequest;
+import com.example.securingweb.demo.service.LoginService;
+import com.example.securingweb.demo.service.PasswordService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;

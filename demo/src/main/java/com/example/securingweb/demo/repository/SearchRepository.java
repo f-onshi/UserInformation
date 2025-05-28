@@ -1,7 +1,7 @@
-package com.example.demo.repository;
+package com.example.securingweb.demo.repository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.UserDto;
+import com.example.securingweb.demo.model.UserDto;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -26,7 +26,7 @@ public class SearchRepository {
         String password = form.getPassword();
         String prefecture = form.getPrefecture();
         String tel = form.getTel();
-        String remarks = form.getRemarks();
+        String roll = form.getRoll();
         String deleteFlag = form.getDeleteFrag();
 
         // StringBuilderでプレースホルダーを含んだ文字列を連結させていく
@@ -60,9 +60,9 @@ public class SearchRepository {
             sql.append(" AND tel LIKE ?");
             params.add("%" + tel + "%");
         }
-        if (remarks != null && !remarks.isEmpty()) {
-            sql.append(" AND remarks LIKE ?");
-            params.add("%" + remarks + "%");
+        if (roll != null && !roll.isEmpty()) {
+            sql.append(" AND roll LIKE ?");
+            params.add("%" + roll + "%");
         }
         if (deleteFlag != null && !deleteFlag.isEmpty()) {
             sql.append(" AND deleteFrag LIKE ?");

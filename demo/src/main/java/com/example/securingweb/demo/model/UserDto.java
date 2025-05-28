@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.securingweb.demo.model;
 
 
 import lombok.Data;
@@ -35,8 +35,8 @@ public class UserDto {
     @NotEmpty(message = "電話番号を入力してください")
     private String tel;
 
-    //空でも大丈夫
-    private String remarks;
+    @NotEmpty(message = "USER or ADMIN を選択してください")
+    private String roll;
 
     //空で大丈夫
     private String deleteFrag;

@@ -1,7 +1,9 @@
 
-package com.example.demo.config;
+/**
+ * このファイルは必要ない。フォルダの階層関係を変更した影響により必要なくなった。 
 
-import org.springframework.context.annotation.Bean;
+package com.example.securingweb.demo.config;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -30,3 +32,4 @@ public class SecurityConfig {
         return http.build();
     }
 }
+*/

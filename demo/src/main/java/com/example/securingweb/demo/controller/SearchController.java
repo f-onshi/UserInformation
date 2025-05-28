@@ -1,14 +1,16 @@
-package com.example.demo.controller;
+package com.example.securingweb.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.securingweb.demo.model.UserDto;
+import com.example.securingweb.demo.service.*;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.ui.Model;
 
-import com.example.demo.model.UserDto;
-import com.example.demo.service.*;
 import java.util.List;
 
 /**

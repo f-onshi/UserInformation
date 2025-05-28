@@ -1,7 +1,9 @@
-package com.example.demo.repository;
+package com.example.securingweb.demo.repository;
 
 import org.springframework.stereotype.Repository;
-import com.example.demo.model.UserDto;
+
+import com.example.securingweb.demo.model.UserDto;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,7 +26,7 @@ public class RegistRepository {
             , form.getPassword()
             , form.getPrefecture() 
             , form.getTel()
-            , form.getRemarks()
+            , form.getRoll()
             , form.getDeleteFrag()
         );      
     }

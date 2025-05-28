@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package com.example.securingweb.demo.model;
 
 import java.io.Serializable;
 

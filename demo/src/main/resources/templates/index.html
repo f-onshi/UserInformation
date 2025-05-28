@@ -6,7 +6,9 @@
     <title>Document</title>
     <script>
         function submitForm(path) {
-            document.querySelector('#form').action = path;
+            const form = document.querySelector('#form');
+            form.action = path;
+            form.submit();
         }
     </script>
 </head>
@@ -37,15 +39,24 @@
             <label for="tel">電話番号</label>
             <input type="text" id="tel" name="tel"  th:value="${backValue != null ? backValue.tel: ''}"><br>
 
-            <label for="remarks">備考</label>
-            <input type="text" id="remarks" name="remarks"  th:value="${backValue != null ? backValue.remarks: ''}"><br>
+            <label for="roll">権限</label>
+            <select name="roll" id="roll">
+                <option type="hidden" value=""></option>
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
+            </select><br>
+        <!--<input type="text" id="roll" name="roll"  th:value="${backValue != null ? backValue.roll: 'USER'}"> -->
 
-            <label for="deleteFrag">削除フラグ</label>
-            <input type="text" id="deleteFrag" name="deleteFrag"  th:value="${backValue != null ? backValue.deleteFrag: ''} "><br><br> 
+            <label for="deleteFrag">削除フラグ</label>  
+            <select name="deleteFrag" id="deleteFrag">
+                <option value="0">0</option>
+                <option value="1">1 (登録不可)</option>
+            </select><br><br>          
+        <!--<input type="text" id="deleteFrag" name="deleteFrag"  th:value="${backValue != null ? backValue.deleteFrag: '0'} "> -->
         
 
-        <input type="submit" onclick="submitForm('/regist')" value="登録">
-        <input type="submit" onclick="submitForm('/search')" value="検索">
+        <input type="button" onclick="submitForm('/regist')" value="登録">
+        <input type="button" onclick="submitForm('/search')" value="検索">
     </form>
     <br>
     <table border="1">
@@ -57,7 +68,7 @@
                 <th>password</th>
                 <th>prefecture</th>
                 <th>tel</th>
-                <th>remarks</th>
+                <th>roll</th>
                 <th>deleteFrag</th>
             </tr>
         </thead>
@@ -69,7 +80,7 @@
                 <td th:text="${user.password}"></td>
                 <td th:text="${user.prefecture}"></td>
                 <td th:text="${user.tel}"></td>
-                <td th:text="${user.remarks}"></td>
+                <td th:text="${user.roll}"></td>
                 <td th:text="${user.deleteFrag}"></td>
             </tr>
         </tbody>
